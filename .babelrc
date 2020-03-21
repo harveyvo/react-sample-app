@@ -1,0 +1,95 @@
+{
+  "env": {
+    "development": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "loose": false,
+            "targets": {
+              "browsers": ["chrome 66", "firefox 60", "safari 11"]
+            },
+            "corejs": 2,
+            "modules": false,
+            "useBuiltIns": "usage"
+          }
+        ],
+        "@babel/preset-react"
+      ],
+      "plugins": [
+        "@babel/plugin-proposal-nullish-coalescing-operator",
+        "@babel/plugin-proposal-optional-chaining",
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/plugin-proposal-class-properties",
+      ]
+    },
+    "production": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "loose": false,
+            "targets": {
+              "browsers": [">0.2%", "not ie <= 11", "not op_mini all"]
+            },
+            "corejs": 2,
+            "modules": false,
+            "useBuiltIns": "usage"
+          }
+        ],
+        "@babel/preset-react"
+      ],
+      "plugins": [
+        "@babel/plugin-transform-runtime",
+        "@babel/plugin-proposal-nullish-coalescing-operator",
+        "@babel/plugin-proposal-optional-chaining",
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-transform-react-inline-elements",
+        "transform-react-pure-class-to-function",
+        [
+          "transform-react-remove-prop-types",
+          {
+            "mode": "remove",
+            "removeImport": true,
+            "ignoreFilenames": ["node_modules"]
+          }
+        ],
+        "react-hot-loader/babel"
+      ]
+    },
+    "test": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "loose": false,
+            "targets": {
+              "browsers": [">0.2%", "not ie <= 11", "not op_mini all"]
+            },
+            "corejs": 2,
+            "useBuiltIns": "usage"
+          }
+        ],
+        "@babel/preset-react"
+      ],
+      "plugins": [
+        "@babel/plugin-transform-runtime",
+        "@babel/plugin-proposal-nullish-coalescing-operator",
+        "@babel/plugin-proposal-optional-chaining",
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-transform-react-inline-elements",
+        "transform-react-pure-class-to-function",
+        [
+          "transform-react-remove-prop-types",
+          {
+            "mode": "remove",
+            "removeImport": true,
+            "ignoreFilenames": ["node_modules"]
+          }
+        ]
+      ]
+    }
+  }
+}

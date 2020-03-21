@@ -1,0 +1,25 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "jest": true,
+    "mocha": true
+  },
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "globals": {
+    "__DEV__"      : false,
+    "__TEST__"     : false,
+    "__PROD__"     : false,
+    "__COVERAGE__" : false
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error", { "trailingComma": "all" }],
+    "react/forbid-prop-types": "warn",
+    "react/jsx-filename-extension": "off",
+    "react/prefer-stateless-function": "warn"
+  }
+}
